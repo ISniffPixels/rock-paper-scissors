@@ -25,8 +25,8 @@ if(computerChoice >= 1 && computerChoice <=3) {
 
 // PLAYER WILL CHOOSE BASED ON NUMBER OUTCOME
 function getPlayerChoice() {
-    let askPlayer = (prompt("Rock, Paper, or Scissors!"))
-    if(askPlayer === "") return;
+    let askPlayer = (prompt("Enter Rock, Paper, or Scissors into prompt"))
+    if(askPlayer === "") location.reload();
     console.log(`Player chooses ${askPlayer}!`);
     return askPlayer;
 }
@@ -35,37 +35,37 @@ function getPlayerChoice() {
         const HClowerCase = playerChoice.trim().toLowerCase();
     
         if(HClowerCase === "rock" && computerChoice >= 4 && computerChoice <= 6) {
-            console.log(`You lose! Paper beats Rock`);
+            console.log(`You lose this round! Paper beats Rock`);
             gameScore.computer++
             console.log(`Computer Score: ${gameScore.computer}`)
             console.log(`Player Score: ${gameScore.player}`)      
         } else if(HClowerCase === "paper" && computerChoice >= 7 && computerChoice <= 10) {
-            console.log(`You lose! Scissors beats Paper`);
+            console.log(`You lose this round! Scissors beats Paper`);
             gameScore.computer++
             console.log(`Computer Score: ${gameScore.computer}`)
             console.log(`Player Score: ${gameScore.player}`)
         } else if(HClowerCase === "scissors" && computerChoice >= 1 && computerChoice <= 3) {
-            console.log(`You lose! Rock beats Scissors`);
+            console.log(`You lose this round! Rock beats Scissors`);
             console.log(`Computer Score: ${gameScore.computer}`)
             console.log(`Player Score: ${gameScore.player}`)
             gameScore.computer++
         } else if(HClowerCase === "paper" && computerChoice >= 1 && computerChoice <= 3) {
-            console.log(`You win! Paper beats Rock`);
+            console.log(`You win this round! Paper beats Rock`);
             gameScore.player++
             console.log(`Player Score: ${gameScore.player}`)
             console.log(`Computer Score: ${gameScore.computer}`)
         } else if(HClowerCase === "scissors" && computerChoice >= 4 && computerChoice <= 6) {
-            console.log(`You win! Scissors beats Paper`);
+            console.log(`You win this round! Scissors beats Paper`);
             gameScore.player++
             console.log(`Player Score: ${gameScore.player}`)
             console.log(`Computer Score: ${gameScore.computer}`)
         } else if(HClowerCase === "rock" && computerChoice >= 7 && computerChoice <= 10) {
-            console.log(`You win! Rock beats Scissors`);
+            console.log(`You win this round! Rock beats Scissors`);
             gameScore.player++
             console.log(`Player Score: ${gameScore.player}`)
             console.log(`Computer Score: ${gameScore.computer}`)
         } 
-          else if(HClowerCase === "rock" && computerChoice >= 1 && computerChoice >= 1 && computerChoice <=3) {
+          else if(HClowerCase === "rock" && computerChoice >= 1 && computerChoice <=3) {
             console.log(`It's a tie!`);
             gameScore.both++
             console.log(`Tie: ${gameScore.both}`);
@@ -75,36 +75,18 @@ function getPlayerChoice() {
             gameScore.both++
             console.log(`Tie: ${gameScore.both}`);
         } 
-          else if(HClowerCase === "scissors" && computerChoice >= 7 && computerChoice >= 7 && computerChoice <= 10) {
+          else if(HClowerCase === "scissors" && computerChoice >= 7 && computerChoice <= 10) {
             console.log(`It's a tie!`);
             gameScore.both++
             console.log(`Tie: ${gameScore.both}`);
         } 
-          else {
-            console.log("Wrong input! Type in Rock, Paper, or Scissors");
+          else if(HClowerCase !== "Rock" || "rock" || "Paper" || "paper" || "Scissors" || "scissors") {
+              console.log("Wrong input! Type in Rock, Paper, or Scissors");
+              location.reload();
         }
 
         localStorage.setItem('gameScore', JSON.stringify(gameScore));
         console.log(gameScore);
-
-        // GAME OVER FUNCTION CLEARS LOCAL STORAGE
-        function gameOver() {
-            if(gameScore.player === 5) {
-                console.log("You win the game!")
-                localStorage.clear()
-            }
-
-            else if(gameScore.computer === 5) {
-                console.log("Computer wins the game!")
-                localStorage.clear()
-            }
-
-            else if(gameScore.both === 5 || gameScore.player === 2 && gameScore.computer === 2 && gameScore.both === 1 || gameScore.player === 1 && gameScore.computer === 1 && gameScore.both === 3) {
-                console.log(`This game is a DRAW!`)
-            }
-        }
-
-        gameOver();
     }
 
     playRound(playerChoice, computerChoice);
@@ -115,11 +97,13 @@ function winner() {
     while(p < 5) {
         playGame();
         p++;
-        const gameScore = JSON.parse(localStorage.getItem('gameScore')) || {player: 0, computer: 0};
+        const gameScore = JSON.parse(localStorage.getItem('gameScore')) || {player: 0, computer: 0, both: 0};
         if(p === 5 && gameScore.player > gameScore.computer){
             console.log("You won the game!")
         } else if(p === 5 && gameScore.player < gameScore.computer) {
             console.log("Computer won the game!")
+        } else if(p === 5 && gameScore.player === gameScore.computer) {
+            console.log(`This game is a DRAW!`);
         }
     }
     localStorage.clear();
