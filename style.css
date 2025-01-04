@@ -12,17 +12,90 @@ html {
     outline: 1px solid rgb(128, 128, 128);
 }
 
+body {
+    font-family: "Permanent Marker", Helvetica, monospace;
+}
+
+.wrapper {
+    background-color: pink;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 100vh;
+}
+
 .container {
+    background-color: aqua;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     width: 1200px;
-    margin: auto;
+    height: 800px;
+
+    gap: 50px;
+}
+
+.game_title {
+    font-size: 60px;
+}
+
+.vs_image {
+    font-size: 40px;
 }
 
 .game_screen {
-    width: 750px;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.player_frame,
+.computer_frame {
+    background-color: white;
+
+    width: 300px;
+    height: 300px;
 }
 
 .btn_container {
-    width: fit-content;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.rock_btn {
+    background-color: white;
+
+    height: 125px;
+    width: 125px;
+    border-radius: 100%;
+    padding: 20px;
+}
+
+.paper_btn {
+    background-color: white;
+
+    height: 125px;
+    width: 125px;
+    border-radius: 100%;
+    padding: 20px;
+}
+
+.scissors_btn {
+    background-color: white;
+
+    height: 125px;
+    width: 125px;
+    border-radius: 100%;
+    padding: 20px;
 }
