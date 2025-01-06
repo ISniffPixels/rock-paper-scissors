@@ -12,12 +12,19 @@ html {
     outline: 1px solid rgb(128, 128, 128);
 }
 
-body {
-    font-family: "Permanent Marker", Helvetica, monospace;
-}
+.permanent-marker-regular {
+    font-family: "Permanent Marker", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+  }
+  
 
 .wrapper {
-    background-color: pink;
+    background-color: black;
+    /* background-image: url(/images/city_lights_1.jpg);
+    background-repeat: no-repeat;
+    background-position: center; */
 
     display: flex;
     justify-content: center;
@@ -28,7 +35,16 @@ body {
 }
 
 .container {
-    background-color: aqua;
+    background-color: rgb(245, 245, 245, 0.4);
+    background-image: url(/images/city_lights_1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    border-radius: 5px;
+
+    box-shadow: -3px -3px 10px 5px rgba(0, 174, 255, 0.5),
+    3px 3px 10px 5px rgb(255, 105, 180, 0.5);
 
     display: flex;
     flex-direction: column;
@@ -36,17 +52,29 @@ body {
     align-items: center;
 
     width: 1200px;
-    height: 800px;
+    height: 750px;
 
     gap: 50px;
+
+    margin-top: 30px;
 }
 
 .game_title {
-    font-size: 60px;
+    position: relative;
+}
+
+.game_title img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -30%);
 }
 
 .vs_image {
-    font-size: 40px;
+    width: 300px;
+    height: 300px;
+    margin: 0 -120px;
 }
 
 .game_screen {
@@ -55,14 +83,76 @@ body {
     align-items: center;
 
     gap: 20px;
+
+    margin-top: 50px;
 }
 
-.player_frame,
-.computer_frame {
-    background-color: white;
+.player_frame {
+    background-color: rgb(128, 0, 128, 0.5);
+    background-image: url('/images/rps-default-hand-left.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px;
 
-    width: 300px;
-    height: 300px;
+    border: 10px groove rgb(255, 105, 180);
+    border-radius: 100%;
+
+    box-shadow: -2px -2px 10px 5px rgb(255, 105, 180, 0.5),
+    2px 2px 10px 5px rgb(255, 105, 180, 0.5);
+
+    width: 225px;
+    height: 225px;
+}
+
+.computer_frame {
+    background-color: rgb(128, 0, 128, 0.5);
+    background-image: url('/images/rps-default-hand-right.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px;
+
+    border: 10px groove rgb(255, 105, 180);
+    border-radius: 100%;
+
+    box-shadow: -2px -2px 10px 5px rgb(255, 105, 180, 0.5),
+    2px 2px 10px 5px rgb(255, 105, 180, 0.5);
+
+    width: 225px;
+    height: 225px;
+}
+
+.text_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 686.417px;
+}
+
+.player_text,
+.computer_text,
+.winner_text {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
+
+    border-radius: 5px;
+
+    padding: 10px;
+}
+
+.player_text {
+    box-shadow: -1px -1px 10px 5px rgba(0, 174, 255, 0.5),
+    1px 1px 10px 5px rgba(0, 174, 255, 0.5);
+}
+
+.computer_text {
+    box-shadow: -1px -1px 10px 5px rgb(255, 105, 180, 0.5),
+    1px 1px 10px 5px rgb(255, 105, 180, 0.5);
+}
+
+.winner_text {
+    box-shadow: -1px -1px 10px 5px rgba(255, 253, 105, 0.5),
+    1px 1px 10px 5px rgba(0, 255, 98, 0.5);
 }
 
 .btn_container {
@@ -70,11 +160,20 @@ body {
     justify-content: center;
     align-items: center;
 
+    margin-bottom: 60px;
+
     gap: 10px;
 }
 
 .rock_btn {
-    background-color: white;
+    background-color: rgba(243, 0, 252, 0.301);
+    background-image: url(/images/rock_btn_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 125px;
+
+    box-shadow: -2px -2px 10px 5px rgb(255, 105, 180, 0.5),
+    2px 2px 10px 5px rgb(255, 105, 180, 0.5);
 
     height: 125px;
     width: 125px;
@@ -83,7 +182,14 @@ body {
 }
 
 .paper_btn {
-    background-color: white;
+    background-color: rgba(0, 225, 255, 0.301);
+    background-image: url(/images/paper_btn_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 125px;
+
+    box-shadow: -2px -2px 10px 5px rgb(255, 105, 180, 0.5),
+    2px 2px 10px 5px rgb(255, 105, 180, 0.5);
 
     height: 125px;
     width: 125px;
@@ -92,7 +198,14 @@ body {
 }
 
 .scissors_btn {
-    background-color: white;
+    background-color: rgba(60, 255, 0, 0.301);
+    background-image: url(/images/scissors_btn_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 125px;
+
+    box-shadow: -2px -2px 10px 5px rgb(255, 105, 180, 0.5),
+    2px 2px 10px 5px rgb(255, 105, 180, 0.5);
 
     height: 125px;
     width: 125px;

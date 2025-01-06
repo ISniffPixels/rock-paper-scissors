@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Game | RPS Championship</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <title>JS Game | RPS Championship</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="container">
-            <div class="game_title">GAME TITLE</div>
-            <div class="game_screen">
-                <div class="player_frame"></div>
-                <div class="vs_image">VS</div>
-                <div class="computer_frame"></div>
+            <div class="game_title">
+                <img src="/images/rps_title_1200.png" alt="...">
             </div>
+            <div class="game_screen">
+                    <div class="player_frame"></div>
+                    <img class="vs_image" src="/images/vs_game_icon.png" alt="...">
+                    <div class="computer_frame"></div>
+            </div>
+            <div class="text_container">
+                <span class="player_text permanent-marker-regular">Player chooses Rock!</span>
+                <span class="computer_text permanent-marker-regular">Computer chooses Paper!</span>
+            </div>
+            <span class="winner_text permanent-marker-regular">Computer Wins! Rock beats Scissors!!</span>
             <div class="btn_container">
-                <button class="rock rock_btn">Rock</button>
-                <button class="paper paper_btn">Paper</button>
-                <button class="scissors scissors_btn">Scissors</button>
+                <button class="rock rock_btn permanent-marker-regular"></button>
+                <button class="paper paper_btn permanent-marker-regular"></button>
+                <button class="scissors scissors_btn permanent-marker-regular"></button>
             </div>
        </div>
     </div>
