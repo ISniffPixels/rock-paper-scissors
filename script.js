@@ -184,7 +184,7 @@ function gameWinner() {
                 }, 1400);
             }
 
-                // Disable buttons and clear game state
+                // DISABLE BUTTONS WHEN GAME HAS CONCLUDED
                 const rock = document.querySelector('.rock');
                 const paper = document.querySelector('.paper');
                 const scissors = document.querySelector('.scissors');
@@ -192,7 +192,7 @@ function gameWinner() {
                 paper.disabled = true;
                 scissors.disabled = true;
 
-                // CLEANS GAME SCORE WHEN GAME IS WON OR LOST
+                // CLEANS GAME SCORE FROM LOCAL STORAGE
                 localStorage.clear();
                 setTimeout(()=> {
                     reset_btn_overlay.style.display = 'block';

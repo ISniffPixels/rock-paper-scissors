@@ -156,13 +156,11 @@ body {
 /* IMAGE SHAKE WHEN BUTTONS PRESSED AND BEFORE RPS CHANGE */
 @keyframes shake {
     0% {transform: translateY(5px)}
-    25% {transform: translateY(-5px)}
+    15% {transform: translateY(-5px)}
+    35% {transform: translateY(5px)}
+    45% {transform: translateY(-5px)}
     50% {transform: translateY(5px)}
-    75% {transform: translateY(-5px)}
-    100% {transform: translateY(5px)}
-    50% {transform: translateY(-5px)}
-    25% {transform: translateY(5px)}
-    0% {transform: translateY(-5px)}     
+    75% {transform: translateY(-5px)}      
 }
 
 .text_container {
