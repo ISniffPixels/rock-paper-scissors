@@ -25,6 +25,7 @@ body {
   
 
 .wrapper {
+    position: relative;
     /* background-image: url(/images/city_lights_1.jpg);
     background-repeat: no-repeat;
     background-position: center; */
@@ -118,10 +119,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-image: url('/images/rps-default-hand-left.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 150px; */
 
     border: 10px groove rgba(0, 174, 255, 0.5);
     border-radius: 100%;
@@ -139,10 +136,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-image: url('/images/rps-default-hand-right.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 150px; */
 
     border: 10px groove rgb(255, 105, 180, 0.5);
     border-radius: 100%;
@@ -158,6 +151,18 @@ body {
 .computer_frame img {
     width: 150px;
     height: auto;
+}
+
+/* IMAGE SHAKE WHEN BUTTONS PRESSED AND BEFORE RPS CHANGE */
+@keyframes shake {
+    0% {transform: translateY(5px)}
+    25% {transform: translateY(-5px)}
+    50% {transform: translateY(5px)}
+    75% {transform: translateY(-5px)}
+    100% {transform: translateY(5px)}
+    50% {transform: translateY(-5px)}
+    25% {transform: translateY(5px)}
+    0% {transform: translateY(-5px)}     
 }
 
 .text_container {
@@ -195,13 +200,45 @@ body {
 }
 
 .btn_container {
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
+    width: 100%;
+
     margin-bottom: 80px;
 
     gap: 10px;
+}
+
+.reset_btn_overlay {
+    background-color: rgb(0, 0, 0, 0.7);
+
+    display: none;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.reset_btn {
+    background-image: url('/images/rps_restart_btn.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    width: 200px;
+    height: 200px;
+
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+
+    transform: translate(-50%, 50%)
 }
 
 .rock_btn {

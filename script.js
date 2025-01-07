@@ -23,17 +23,35 @@ function playGame(roundEnd) {
     }
 
     function determineComputerChoice(computerChoice) {
+        const computer_frame_img = document.querySelector('.computer_frame img');
+
+         // REMOVE ANIMATION AND RESET
+         computer_frame_img.style.animation = 'none';
+         computer_frame_img.offsetHeight;
+
+         // APPLY ANIMATION
+         computer_frame_img.style.animation = 'shake 1600ms ease-in';
+
         if(computerChoice >= 1 && computerChoice <=3) {
-            console.log(`Computer chooses Rock!`);
-            computer_text.textContent = "Computer chooses Rock!";
+            computer_frame_img.src = '/images/rps-rock-hand-left.png';
+            setTimeout(()=> {
+                computer_frame_img.src = '/images/rps-rock-hand-left.png';
+                computer_text.textContent = "Computer chooses Rock!";
+            }, 1400)
             return "rock";
         } else if(computerChoice >= 4 && computerChoice <= 6) {
-            console.log(`Computer chooses Paper!`);
-            computer_text.textContent = "Computer chooses Paper!";
+            computer_frame_img.src = '/images/rps-rock-hand-left.png';
+            setTimeout(()=> {
+                computer_frame_img.src = '/images/rps-paper-hand-left.png';
+                computer_text.textContent = "Computer chooses Paper!";
+            }, 1400)
             return "paper";
         } else if(computerChoice >= 7 && computerChoice <= 10) {
-            console.log(`Computer chooses Scissors!`);
-            computer_text.textContent = "Computer chooses Scissors!";
+            computer_frame_img.src = '/images/rps-rock-hand-left.png';
+            setTimeout(()=> {
+                computer_frame_img.src = '/images/rps-scissors-hand-left.png';
+                computer_text.textContent = "Computer chooses Scissors!";
+            }, 1400)
             return "scissors";
         }
     }
@@ -41,20 +59,30 @@ function playGame(roundEnd) {
     function handlePlayerChoice(playerChoice) {
         const player_frame_img = document.querySelector('.player_frame img');
 
+        // REMOVE ANIMATION AND RESET
+        player_frame_img.style.animation = 'none';
+        player_frame_img.offsetHeight;
+
+        // APPLY ANIMATION
+        player_frame_img.style.animation = 'shake 1600ms ease-in';
+        
         if(!activeGame) return;
 
         if(playerChoice === "rock") {
+            player_frame_img.src = '/images/rps-rock-hand-right.png';
             setTimeout(()=> {
-                player_frame_img.src = '/images/rps-rock-hand-left.png';
-            }, 1000)
+                player_frame_img.src = '/images/rps-rock-hand-right.png';
+            }, 1400)
         } else if(playerChoice === "paper") {
+            player_frame_img.src = '/images/rps-rock-hand-right.png';
             setTimeout(()=> {
-                player_frame_img.src = '/images/rps-paper-hand-left.png';
-            }, 1000)
+                player_frame_img.src = '/images/rps-paper-hand-right.png';
+            }, 1400)
         } else {
+            player_frame_img.src = '/images/rps-rock-hand-right.png';
             setTimeout(()=> {
-                player_frame_img.src = '/images/rps-scissors-hand-left.png';
-            }, 1000)
+                player_frame_img.src = '/images/rps-scissors-hand-right.png';
+            }, 1400)
         }
         
         const computerChoice = determineComputerChoice(getComputerChoice());
@@ -85,46 +113,39 @@ function playGame(roundEnd) {
 
 
         if (playerChoice === computerChoice) {
-                    console.log(`Player chooses ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)
-                    }!`);
-                    player_text.textContent = `Player chooses ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)
-                    }!`;
-                    gameScore.player++;
-                    gameScore.computer++;
-                    player_score.textContent = `Player Score: ${gameScore.player}`;
-                    computer_score.textContent = `Computer Score: ${gameScore.computer}`;
-                    console.log(`It's a tie!`);
-                    winner_text.textContent = `It's a tie!`;
+                    setTimeout(()=> {
+                        player_text.textContent = `Player chooses ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)
+                        }!`;
+                        player_score.textContent = `Player Score: ${gameScore.player}`;
+                        computer_score.textContent = `Computer Score: ${gameScore.computer}`;
+                        winner_text.textContent = `It's a tie!`;
+                    }, 1400);
+                        gameScore.player++;
+                        gameScore.computer++;
                     
         } else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
                    (playerChoice === 'paper' && computerChoice === 'rock') ||
                    (playerChoice === 'scissors' && computerChoice === 'paper')){
-                     console.log(`Player chooses ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)}!`);
-                     player_text.textContent = `Player chooses ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)
-                     }!`;
-                     console.log(`You win this round! ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)} beats ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)}!`);
-                     winner_text.textContent = `You win this round! ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)} beats ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)}!`;
-
-                     gameScore.player++;
-                     console.log(`Player Score: ${gameScore.player}`);
-                     player_score.textContent = `Player Score: ${gameScore.player}`;
-                     console.log(`Computer Score: ${gameScore.computer}`);
-                     computer_score.textContent = `Computer Score: ${gameScore.computer}`;
+                    setTimeout(()=> {
+                        player_text.textContent = `Player chooses ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)
+                        }!`;
+                        winner_text.textContent = `You win this round! ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)} beats ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)}!`;
+                        player_score.textContent = `Player Score: ${gameScore.player}`;
+                        computer_score.textContent = `Computer Score: ${gameScore.computer}`;
+                    }, 1400);
+                        gameScore.player++;
         } else {
-                     console.log(`Player chooses ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)}!`);
-                     player_text.textContent = `Player chooses ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)
-                     }!`;
-                     console.log(`You lose this round! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)}!`);
-                     winner_text.textContent = `You lose this round! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)}!`
-                     gameScore.computer++
-                     console.log(`Computer Score: ${gameScore.computer}`);
-                     computer_score.textContent = `Computer Score: ${gameScore.computer}`;
-                     console.log(`Player Score: ${gameScore.player}`);
-                     player_score.textContent = `Player Score: ${gameScore.player}`;
+                setTimeout(()=> {
+                    player_text.textContent = `Player chooses ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)
+                    }!`;
+                    winner_text.textContent = `You lose this round! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)}!`
+                    computer_score.textContent = `Computer Score: ${gameScore.computer}`;
+                    player_score.textContent = `Player Score: ${gameScore.player}`;
+                }, 1400);   
+                    gameScore.computer++
         }
             
         localStorage.setItem('gameScore', JSON.stringify(gameScore));
-        console.log(gameScore);
 
         // ROUND END
         if(roundEnd) {
@@ -136,6 +157,8 @@ function playGame(roundEnd) {
 function gameWinner() {
     // TEXT ELEMENT DECLARATIONS
     const winner_text = document.querySelector('.winner_text');
+    const reset_btn = document.querySelector('.reset_btn');
+    const reset_btn_overlay = document.querySelector('.reset_btn_overlay');
 
     // VARIABLE TO COUNT AMOUNT OF ROUNDS PER TURN FOR FIVE TURNS
     let round=0;
@@ -148,14 +171,17 @@ function gameWinner() {
             activeGame = false;
 
             if(gameScore.player > gameScore.computer){
-                console.log("You won the RPS Championship of the World!!")
-                winner_text.textContent = `You won the RPS Championship of the World!!`
+                setTimeout(()=> {
+                    winner_text.textContent = `You won the RPS Championship of the World!!`
+                }, 1400);
             } else if(gameScore.player < gameScore.computer) {
-                console.log("Computer won the RPS Championship of the World!!")
-                winner_text.textContent = `Computer won the RPS Championship of the World!!`
+                setTimeout(()=> {
+                    winner_text.textContent = `Computer won the RPS Championship of the World!!`
+                }, 1400);
             } else {
-                console.log(`This bout was scored a DRAW!`);
-                winner_text.textContent = `This bout was scored a DRAW!`
+                setTimeout(()=> {
+                    winner_text.textContent = `This bout was scored a DRAW!`
+                }, 1400);
             }
 
                 // Disable buttons and clear game state
@@ -168,11 +194,18 @@ function gameWinner() {
 
                 // CLEANS GAME SCORE WHEN GAME IS WON OR LOST
                 localStorage.clear();
-            } 
+                setTimeout(()=> {
+                    reset_btn_overlay.style.display = 'block';
+                }, 3000);
+            }
         }
+        
+        // START GAME INVOKING ROUNDBYROUND FUNC AS A CALLBACK IN PLAYGAME FUNC
+        playGame(roundByRound);
 
-    // START GAME INVOKING ROUNDBYROUND FUNC AS A CALLBACK IN PLAYGAME FUNC
-    playGame(roundByRound);
+        reset_btn.addEventListener('click', ()=> {
+            window.location.reload()
+        });
 }
 
 gameWinner();
