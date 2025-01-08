@@ -34,6 +34,8 @@ body {
 }
 
 .container {
+    position: relative;
+
     background-color: rgb(245, 245, 245, 0.4);
     background-image: url(/images/city_lights_1.jpg);
     background-repeat: no-repeat;
@@ -216,6 +218,8 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
+
+    z-index: 100;
 }
 
 .reset_btn {
@@ -302,4 +306,10 @@ body {
 @keyframes btn_press {
     from {transform: translateY(2px)}
     to {transform: translateY(-2px)}    
+}
+
+.mute_btn {
+    position: absolute;
+    top: 700px;
+    left: 50px;
 }
