@@ -155,6 +155,17 @@ function playGame(roundEnd) {
 }
 
 function gameWinner() {
+    // BACKGROUND MUSIC
+    const music = new Audio('/sounds/retro_rps_soundtrack.mp3');
+    music.play();
+    music.volume = 0;
+
+    // SOUND EFFECTS
+    const win = new Audio('/sounds/you_win.mp3');
+    const lose = new Audio('/sounds/you_lose.mp3');
+    const double_ko = new Audio('/sounds/double_ko.mp3');
+    const game_over = new Audio('/sounds/game_over.mp3');
+
     // TEXT ELEMENT DECLARATIONS
     const winner_text = document.querySelector('.winner_text');
     const reset_btn = document.querySelector('.reset_btn');
@@ -173,14 +184,23 @@ function gameWinner() {
             if(gameScore.player > gameScore.computer){
                 setTimeout(()=> {
                     winner_text.textContent = `You won the RPS Championship of the World!!`
+                    music.pause();
+                    music.currentTime = 0;
+                    win.play();
                 }, 1400);
             } else if(gameScore.player < gameScore.computer) {
                 setTimeout(()=> {
                     winner_text.textContent = `Computer won the RPS Championship of the World!!`
+                    music.pause();
+                    music.currentTime = 0;
+                    lose.play();
                 }, 1400);
             } else {
                 setTimeout(()=> {
                     winner_text.textContent = `This bout was scored a DRAW!`
+                    music.pause();
+                    music.currentTime = 0;
+                    double_ko.play();
                 }, 1400);
             }
 
@@ -196,6 +216,9 @@ function gameWinner() {
                 localStorage.clear();
                 setTimeout(()=> {
                     reset_btn_overlay.style.display = 'block';
+                    music.pause();
+                    music.currentTime = 0;
+                    game_over.play();
                 }, 3000);
             }
         }
