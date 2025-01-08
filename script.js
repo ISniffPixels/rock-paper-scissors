@@ -157,8 +157,20 @@ function playGame(roundEnd) {
 function gameWinner() {
     // BACKGROUND MUSIC
     const music = new Audio('/sounds/retro_rps_soundtrack.mp3');
+    const mute_btn = document.querySelector('.mute_btn');
+    let music_playing = true;
+
     music.play();
-    music.volume = 0;
+    music.volume = 0.5;
+
+    mute_btn.addEventListener('click', ()=> {
+        if(music_playing) {
+            music.pause();
+        } else {
+            music.play();
+        }
+        music_playing = !music_playing;
+    });
 
     // SOUND EFFECTS
     const win = new Audio('/sounds/you_win.mp3');
