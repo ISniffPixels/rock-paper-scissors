@@ -156,7 +156,7 @@ function playGame(roundEnd) {
 
 function gameWinner() {
     // BACKGROUND MUSIC
-    const music = new Audio('/sounds/retro_rps_soundtrack.mp3');
+    const music = new Audio('/sounds/glitch_retro_bgm.mp3');
     const mute_btn = document.querySelector('.mute_btn');
     let music_playing = true;
 
@@ -166,8 +166,10 @@ function gameWinner() {
     mute_btn.addEventListener('click', ()=> {
         if(music_playing) {
             music.pause();
+            mute_btn.textContent = "MUSIC OFF";
         } else {
             music.play();
+            mute_btn.textContent = "MUSIC ON";
         }
         music_playing = !music_playing;
     });
