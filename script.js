@@ -33,23 +33,23 @@ function playGame(roundEnd) {
          computer_frame_img.style.animation = 'shake 1600ms ease-in';
 
         if(computerChoice >= 1 && computerChoice <=3) {
-            computer_frame_img.src = '/images/rps-rock-hand-left.png';
+            computer_frame_img.src = './images/rps-rock-hand-left.png';
             setTimeout(()=> {
-                computer_frame_img.src = '/images/rps-rock-hand-left.png';
+                computer_frame_img.src = './images/rps-rock-hand-left.png';
                 computer_text.textContent = "Computer chooses Rock!";
             }, 1400)
             return "rock";
         } else if(computerChoice >= 4 && computerChoice <= 6) {
-            computer_frame_img.src = '/images/rps-rock-hand-left.png';
+            computer_frame_img.src = './images/rps-rock-hand-left.png';
             setTimeout(()=> {
                 computer_frame_img.src = '/images/rps-paper-hand-left.png';
                 computer_text.textContent = "Computer chooses Paper!";
             }, 1400)
             return "paper";
         } else if(computerChoice >= 7 && computerChoice <= 10) {
-            computer_frame_img.src = '/images/rps-rock-hand-left.png';
+            computer_frame_img.src = './images/rps-rock-hand-left.png';
             setTimeout(()=> {
-                computer_frame_img.src = '/images/rps-scissors-hand-left.png';
+                computer_frame_img.src = './images/rps-scissors-hand-left.png';
                 computer_text.textContent = "Computer chooses Scissors!";
             }, 1400)
             return "scissors";
@@ -69,19 +69,19 @@ function playGame(roundEnd) {
         if(!activeGame) return;
 
         if(playerChoice === "rock") {
-            player_frame_img.src = '/images/rps-rock-hand-right.png';
+            player_frame_img.src = './images/rps-rock-hand-right.png';
             setTimeout(()=> {
-                player_frame_img.src = '/images/rps-rock-hand-right.png';
+                player_frame_img.src = './images/rps-rock-hand-right.png';
             }, 1400)
         } else if(playerChoice === "paper") {
-            player_frame_img.src = '/images/rps-rock-hand-right.png';
+            player_frame_img.src = './images/rps-rock-hand-right.png';
             setTimeout(()=> {
-                player_frame_img.src = '/images/rps-paper-hand-right.png';
+                player_frame_img.src = './images/rps-paper-hand-right.png';
             }, 1400)
         } else {
-            player_frame_img.src = '/images/rps-rock-hand-right.png';
+            player_frame_img.src = './images/rps-rock-hand-right.png';
             setTimeout(()=> {
-                player_frame_img.src = '/images/rps-scissors-hand-right.png';
+                player_frame_img.src = './images/rps-scissors-hand-right.png';
             }, 1400)
         }
         
@@ -156,12 +156,12 @@ function playGame(roundEnd) {
 
 function gameWinner() {
     // BACKGROUND MUSIC
-    const music = new Audio('/sounds/glitch_retro_bgm.mp3');
+    const music = new Audio('./sounds/glitch_retro_bgm.mp3');
     const mute_btn = document.querySelector('.mute_btn');
     let music_playing = true;
 
     music.play();
-    music.volume = 0.5;
+    music.volume = 0.3;
 
     mute_btn.addEventListener('click', ()=> {
         if(music_playing) {
@@ -175,10 +175,10 @@ function gameWinner() {
     });
 
     // SOUND EFFECTS
-    const win = new Audio('/sounds/you_win.mp3');
-    const lose = new Audio('/sounds/you_lose.mp3');
-    const double_ko = new Audio('/sounds/double_ko.mp3');
-    const game_over = new Audio('/sounds/game_over.mp3');
+    const win = new Audio('./sounds/you_win.mp3');
+    const lose = new Audio('./sounds/you_lose.mp3');
+    const double_ko = new Audio('./sounds/double_ko.mp3');
+    const game_over = new Audio('./sounds/game_over.mp3');
 
     // TEXT ELEMENT DECLARATIONS
     const winner_text = document.querySelector('.winner_text');
