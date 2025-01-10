@@ -42,7 +42,7 @@ function playGame(roundEnd) {
         } else if(computerChoice >= 4 && computerChoice <= 6) {
             computer_frame_img.src = './images/rps-rock-hand-left.png';
             setTimeout(()=> {
-                computer_frame_img.src = '/images/rps-paper-hand-left.png';
+                computer_frame_img.src = './images/rps-paper-hand-left.png';
                 computer_text.textContent = "Computer chooses Paper!";
             }, 1400)
             return "paper";
