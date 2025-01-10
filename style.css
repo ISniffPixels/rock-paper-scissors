@@ -315,6 +315,20 @@ body {
     cursor: pointer;
 }
 
+.created_by {
+    color: rgb(255, 255, 255);
+    
+    font-size: 16px;
+
+    position: absolute;
+    top: 700px;
+    right: 10px;
+
+    padding: 7px 20px;
+
+    cursor: pointer;
+}
+
 .rock_btn:active,
 .paper_btn:active,
 .scissors_btn:active,
