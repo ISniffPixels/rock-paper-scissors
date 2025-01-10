@@ -37,7 +37,7 @@ body {
     position: relative;
 
     background-color: rgb(245, 245, 245, 0.4);
-    background-image: url('../images/city_lights_1.jpg');
+    background-image: url('./images/city_lights_1.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -223,7 +223,7 @@ body {
 }
 
 .reset_btn {
-    background-image: url('../images/rps_restart_btn.png');
+    background-image: url('./images/rps_restart_btn.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -242,7 +242,7 @@ body {
 
 .rock_btn {
     background-color: rgba(243, 0, 252, 0.301);
-    background-image: url('../images/rock_btn_icon.png');
+    background-image: url('./images/rock_btn_icon.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100px;
@@ -261,7 +261,7 @@ body {
 
 .paper_btn {
     background-color: rgba(0, 225, 255, 0.301);
-    background-image: url('../images/paper_btn_icon.png');
+    background-image: url('./images/paper_btn_icon.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100px;
@@ -280,7 +280,7 @@ body {
 
 .scissors_btn {
     background-color: rgba(60, 255, 0, 0.301);
-    background-image: url('../images/scissors_btn_icon.png');
+    background-image: url('./images/scissors_btn_icon.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100px;
