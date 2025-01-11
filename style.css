@@ -102,6 +102,10 @@ body {
 }
 
 @media screen and (max-width: 850px) {
+    .wrapper {
+        overflow: hidden;
+    }
+
     .player_score {
         left: -325px;
     }
