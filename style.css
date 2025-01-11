@@ -108,7 +108,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    width: 686.417px;
+    gap: 200px;
 }
 
 @media screen and (max-width: 850px) {
@@ -126,7 +126,7 @@ body {
         justify-content: center;
         align-items: center;
 
-        gap: 10px;
+        gap: 20px;
     }
 
     .player_score {
