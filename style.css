@@ -8,7 +8,6 @@ html {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
-    outline: 1px solid gray;
 }
 
 body {
@@ -360,6 +359,7 @@ body {
     }
 
     .scores_container {
+        justify-content: space-evenly;
         margin-top: 70px;
     }
 
