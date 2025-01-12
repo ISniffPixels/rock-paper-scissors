@@ -106,22 +106,6 @@ body {
     gap: 200px;
 }
 
-@media screen and (max-width: 850px) {
-    .text_container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        gap: 20px;
-    }
-
-    .mute_btn {
-        font-size: 12px;
-    }
-
-}
-
 .game_title {
     position: relative;
 }
@@ -361,4 +345,70 @@ body {
 @keyframes btn_press {
     from {transform: translateY(2px)}
     to {transform: translateY(-2px)}    
+}
+
+/* MOBILE ASPECT MEDIA QUERIES SECTION */
+@media screen and (max-width: 850px) {
+    html,
+    body {
+        overflow: hidden;
+    }
+
+    .container {
+        margin-top: 0;
+        gap: 10px;
+    }
+
+    .scores_container {
+        margin-top: 70px;
+    }
+
+    .player_score,
+    .computer_score {
+        font-size: 16px;
+    }
+
+    .computer_frame,
+    .player_frame {
+        width: 150px;
+        height: 150px;
+    }
+
+    .player_frame img,
+    .computer_frame img {
+        width: 100px;
+        height: auto;
+    }
+
+    .game_title img {
+        transform: translate(-50%, 60%);
+        width: 550px;
+    }
+
+    .text_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 20px;
+    }
+
+    .player_text,
+    .computer_text,
+    .winner_text {
+        font-size: 16px;
+    }
+
+    .btn_container {
+        transform: scale(0.8);
+        margin-bottom: 100px;
+        padding: 50px;
+    }
+
+    .mute_btn,
+    .created_by {
+        font-size: 12px;
+    }
+
 }
