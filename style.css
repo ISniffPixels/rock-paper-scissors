@@ -366,6 +366,7 @@ body {
     .player_score,
     .computer_score {
         font-size: 16px;
+        margin-inline: -100px;
     }
 
     .computer_frame,
