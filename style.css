@@ -398,7 +398,7 @@ body {
     .player_text,
     .computer_text,
     .winner_text {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .btn_container {
