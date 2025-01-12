@@ -2,18 +2,13 @@ html {
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 1200px){
-    html {
-        transform: scale(0.7);
-    }
-}
-
 *,
 *::before,
 *::after {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+    outline: 1px solid gray;
 }
 
 body {
@@ -31,8 +26,6 @@ body {
   
 
 .wrapper {
-    position: relative;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,8 +35,6 @@ body {
 }
 
 .container {
-    position: relative;
-
     background-color: rgb(245, 245, 245, 0.4);
     background-image: url('./images/city_lights_1.jpg');
     background-repeat: no-repeat;
@@ -69,46 +60,38 @@ body {
 }
 
 .scores_container {
-    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
 }
 
 .player_score {
-    position: absolute;
-    top: 20px;
-    left: -500px;
-
     color: rgb(255, 255, 255);
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .computer_score {
-    position: absolute;
-    top: 20px;
-    right: -500px;
 
     color: rgb(255, 255, 255);
-    font-size: 25px;
+    font-size: 20px;
 }
 
-@media screen and (max-width: 1200px) {
-    .player_score {
-        left: -350px;
-        font-size: 20px;
-    }
-
-    .computer_score  {
-        right: -350px;
-        font-size: 20px;
-    }
-
+.frame_container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap: 40px;
 }
 
 .game_screen {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    gap: 20px;
+    gap: 50px;
 
     margin-top: 50px;
 }
@@ -117,6 +100,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    width: 100%;
 
     gap: 200px;
 }
@@ -129,14 +114,6 @@ body {
         align-items: center;
 
         gap: 20px;
-    }
-
-    .player_score {
-        left: -325px;
-    }
-
-    .computer_score  {
-        right: -300px;
     }
 
     .mute_btn {
@@ -154,13 +131,15 @@ body {
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, -22%);
+    transform: translate(-50%, -28%);
+
+    width: 950px;
 }
 
 .vs_image {
-    width: 300px;
-    height: 300px;
-    margin: 0 -120px;
+    width: 200px;
+    height: 200px;
+    margin-inline: -100px;
 }
 
 .player_frame {
@@ -240,16 +219,20 @@ body {
 }
 
 .btn_container {
-    position: relative;
-
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     width: 100%;
 
-    margin-bottom: 80px;
+    padding: 15px;
+    margin-bottom: 40px;
 
+    gap: 10px;
+}
+
+.btn_container .rps_btn_gap {
+    display: flex;
     gap: 10px;
 }
 
@@ -343,6 +326,8 @@ body {
 }
 
 .mute_btn {
+    align-self: flex-end;
+
     background-color: rgba(0, 0, 0, 0.1);
     color: rgb(255, 255, 255);
 
@@ -351,27 +336,19 @@ body {
     
     font-size: 16px;
 
-    position: absolute;
-    top: 680px;
-    left: 30px;
-
     padding: 7px 20px;
 
     cursor: pointer;
 }
 
 .created_by {
+    align-self: flex-end;
+
     color: rgb(255, 255, 255);
     
     font-size: 16px;
 
-    position: absolute;
-    top: 700px;
-    right: 10px;
-
     padding: 7px 20px;
-
-    cursor: pointer;
 }
 
 .rock_btn:active,
