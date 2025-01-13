@@ -155,6 +155,17 @@ function playGame(roundEnd) {
 }
 
 function gameWinner() {
+    // TEXT ELEMENT DECLARATIONS
+    const winner_text = document.querySelector('.winner_text');
+    const reset_btn = document.querySelector('.reset_btn');
+    const reset_btn_overlay = document.querySelector('.reset_btn_overlay');
+    
+    // SOUND EFFECTS
+    const win = new Audio('./sounds/you_win.mp3');
+    const lose = new Audio('./sounds/you_lose.mp3');
+    const double_ko = new Audio('./sounds/double_ko.mp3');
+    const game_over = new Audio('./sounds/game_over.mp3');
+ 
     // BACKGROUND MUSIC
     const music = new Audio('./sounds/glitch_retro_bgm.mp3');
     const mute_btn = document.querySelector('.mute_btn');
@@ -173,17 +184,6 @@ function gameWinner() {
         }
         music_playing = !music_playing;
     });
-
-    // SOUND EFFECTS
-    const win = new Audio('./sounds/you_win.mp3');
-    const lose = new Audio('./sounds/you_lose.mp3');
-    const double_ko = new Audio('./sounds/double_ko.mp3');
-    const game_over = new Audio('./sounds/game_over.mp3');
-
-    // TEXT ELEMENT DECLARATIONS
-    const winner_text = document.querySelector('.winner_text');
-    const reset_btn = document.querySelector('.reset_btn');
-    const reset_btn_overlay = document.querySelector('.reset_btn_overlay');
 
     // VARIABLE TO COUNT AMOUNT OF ROUNDS PER TURN FOR FIVE TURNS
     let round=0;
